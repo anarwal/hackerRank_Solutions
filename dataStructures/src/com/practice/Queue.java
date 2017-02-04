@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * Created by abhimanyunarwal on 1/31/17.
+ * implement queue using array
  */
 public class Queue {
     private int front;
@@ -11,6 +12,7 @@ public class Queue {
     int size;
     int[] queue;
 
+    //initialize constructor
     public Queue(int inputSize) {
         if(inputSize<0){
             System.out.println("Negative values not allowed");
@@ -28,7 +30,7 @@ public class Queue {
         return false;
     }
 
-
+    //inserting element in queue
     public void enqueue(int element) {
 
         if ((front - rear + 1) == size) {
@@ -44,6 +46,7 @@ public class Queue {
         }
     }
 
+    //removing element in queue (FIFO)
     public int dequeue(){
         int value=0;
         if(isEmpty()){

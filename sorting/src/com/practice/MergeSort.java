@@ -2,6 +2,8 @@ package com.practice;
 
 /**
  * Created by abhimanyunarwal on 1/31/17.
+ * Perform mergesort on given array
+ * time complexity: nlogn
  */
 public class MergeSort {
 
@@ -9,13 +11,13 @@ public class MergeSort {
     int[] temp;
     int length;
 
-
     public static void mergeSort(int[] array) {
         System.out.println("length is" +array.length);
         doMerge(array, new int[array.length], 0, array.length-1);
 
     }
 
+    //recursive call to itself for merging array
     public static void doMerge(int[] arr, int[] temp, int left, int right){
         if(left==right){
             return;
@@ -27,6 +29,7 @@ public class MergeSort {
         sort(arr, temp, left, right);
     }
 
+    //method to sort by everytime dividing the array
     public static void sort(int[] a, int[] temp, int lStart, int rEnd){
         int lEnd=(rEnd+lStart)/2;
         int rStart=lEnd+1;

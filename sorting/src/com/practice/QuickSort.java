@@ -2,6 +2,8 @@ package com.practice;
 
 /**
  * Created by abhimanyunarwal on 1/31/17.
+ * program to perform quicksort on given array
+ * time complexity: nlogn
  */
 import java.util.*;
 
@@ -10,12 +12,8 @@ public class QuickSort {
     public int a[];
     public int length;
 
-    private void swap(int i, int j){
-        int temp=a[i];
-        a[i]=a[j];
-        a[j]=temp;
-    }
 
+    //take pivot and sort the given array based on it
     private void quicksort(int low, int high){
         int i=low;
         int j=high;
@@ -44,6 +42,14 @@ public class QuickSort {
 
     }
 
+    //swap function for 2 elements
+    private void swap(int i, int j){
+        int temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+
+    //method to perform sort on array
     public void sort(int[] inputArr){
         if (inputArr == null || inputArr.length == 0) {
             return;

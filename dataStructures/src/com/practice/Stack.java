@@ -2,6 +2,7 @@ package com.practice;
 
 /**
  * Created by abhimanyunarwal on 1/31/17.
+ * implement stack (LIFO) using array
  */
 public class Stack{
     int size;

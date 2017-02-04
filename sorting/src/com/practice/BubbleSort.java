@@ -4,11 +4,14 @@ import java.util.Scanner;
 
 /**
  * Created by abhimanyunarwal on 1/30/17.
+ * Perform bubble sort on given array
+ * time complexity: n^2
  */
+
 class BubbleSort{
     private static void bubbleSort(int a[]){
         int temp=0;
-        for(int i=0; i<a.length; i++){
+        for(int i=0; i<a.length; i++){ //compare by running two loops through array
             for(int j=1; j<a.length-1;j++){
                 if(a[j-1]>a[j]){
                     temp=a[j-1];
