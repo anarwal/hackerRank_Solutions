@@ -3,8 +3,6 @@
  * HackRank-Ransom Note problem
  */
 
-
-
 import java.util.*;
 
 public class RansomNoteProgram {
