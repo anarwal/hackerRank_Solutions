@@ -1,4 +1,4 @@
-package com.practice;
+package com.dataStructures;
 
 /**
  * Created by abhimanyunarwal on 1/31/17.

@@ -1,4 +1,4 @@
-/**
+package com.collections; /**
  * Created by abhimanyunarwal on 2/2/17.
  * HackRank-Ransom Note problem
  */

@@ -1,4 +1,4 @@
-package com.practice;
+package com.sorting;
 
 import java.util.Scanner;
 
