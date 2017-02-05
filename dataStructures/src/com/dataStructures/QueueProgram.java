@@ -6,14 +6,14 @@ import java.util.Arrays;
  * Created by abhimanyunarwal on 1/31/17.
  * implement queue using array
  */
-public class Queue {
+public class QueueProgram {
     private int front;
     private int rear;
     int size;
     int[] queue;
 
     //initialize constructor
-    public Queue(int inputSize) {
+    public QueueProgram(int inputSize) {
         if(inputSize<0){
             System.out.println("Negative values not allowed");
         }
@@ -69,7 +69,7 @@ public class Queue {
     }
 
     public static void main(String[] args) {
-        Queue newQueue= new Queue(5);
+        QueueProgram newQueue= new QueueProgram(5);
          newQueue.enqueue(4);
          newQueue.enqueue(3);
          newQueue.enqueue(7);
