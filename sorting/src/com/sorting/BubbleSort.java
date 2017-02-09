@@ -12,7 +12,7 @@ class BubbleSort{
     private static void bubbleSort(int a[]){
         int temp=0;
         for(int i=0; i<a.length; i++){ //compare by running two loops through array
-            for(int j=1; j<a.length-1;j++){
+            for(int j=1; j<a.length;j++){
                 if(a[j-1]>a[j]){
                     temp=a[j-1];
                     a[j-1]=a[j];
