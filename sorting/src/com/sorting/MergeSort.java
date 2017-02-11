@@ -45,7 +45,6 @@ public class MergeSort {
             }
             else{
                 temp[index]=a[right];
-
                 right++;
             }
             index++;
