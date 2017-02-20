@@ -2,7 +2,7 @@ package com.searching;
 
 import java.util.*;
 
-public class ImplementDFS {
+public class BiggestRegionUsingDFS {
 
     private static int rows;
     private static int cols;
