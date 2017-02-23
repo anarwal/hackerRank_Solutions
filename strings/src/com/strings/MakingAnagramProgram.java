@@ -9,7 +9,6 @@ import java.util.regex.*;
 /**
  * Created by abhimanyunarwal on 2/3/17.
  * HackerRank: Making Anagram Program
- * doesn't work as expected, need to update
  */
 public class MakingAnagramProgram {
         public static int numberNeeded(String first, String second) {
@@ -18,36 +17,40 @@ public class MakingAnagramProgram {
             char[] secondArray = second.toLowerCase().toCharArray();
 
             Map<Character, Integer> map = new HashMap<>();
+            int counter = 0;
 
             //add all the elements from first array in map, if the exist in map then increase reptition of char (i.e. value)
             for (Character ch : firstArray) {
                 if (!map.containsKey(ch)) {
                     map.put(ch, 1);
                 } else {
-                    Integer counter = map.get(ch);
-                    map.put(ch, counter + 1);
+                    Integer count = map.get(ch);
+                    map.put(ch, count + 1);
                 }
             }
 
-            //check second array, if char from second array exist in map then remove if, if it does not exist add to the map handeling value(repetition of char)
+            //check second array, if char from second array exist in map then reduce frequency, if it does not exist directly increase counter for removing it
             for (Character chr : secondArray) {
                 if (!map.containsKey(chr)) {
-                    map.put(chr, 1);
+                    counter++;
                 } else {
-                    map.remove(chr);
+                    if (map.get(chr) == 1) {
+                        map.remove(chr);
+                    } else {
+                        Integer count = map.get(chr);
+                        map.put(chr, count - 1);
+                    }
                 }
             }
 
-            int counter=0;
 
-            //get values from map (i.e. repetitions of unique characters and add all values)
-            for(Integer i: map.values()){
-                counter +=i;
-            }
+                //get values from map (i.e. repetitions of unique characters and add all values)
+                for (Integer i : map.values()) {
+                    counter += i;
+                }
 
-        return counter;
+                return counter;
         }
-
 
         public static void main(String[] args) {
             Scanner in = new Scanner(System.in);
