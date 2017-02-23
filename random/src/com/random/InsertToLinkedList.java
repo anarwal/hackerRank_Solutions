@@ -17,9 +17,7 @@ class Node {
 }
 
 public class InsertToLinkedList {
-
     public static  Node insert(Node head, int data) {
-        //Complete this method
         Node node = new Node(data);
         if(head == null){
             head = node;
