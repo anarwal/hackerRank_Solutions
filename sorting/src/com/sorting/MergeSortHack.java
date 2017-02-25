@@ -10,10 +10,11 @@ import java.util.regex.*;
  * Created by abhimanyunarwal on 2/8/17.
  */
 public class MergeSortHack {
-    static int counter=0;
+    private static long counter=0;
 
-    public static int mergeSort(int[] array){
-        merge(array, new int[array.length-1], 0, array.length-1);
+    public static long mergeSort(int[] array){
+        counter=0;
+        merge(array, new int[array.length], 0, array.length-1);
         return counter;
     }
 
@@ -24,34 +25,37 @@ public class MergeSortHack {
 
         merge(arr, temp, left, middle);
         merge(arr, temp, middle+1, right);
-        sort(arr, temp, left, middle);
+        sort(arr, temp, left,middle, right);
     }
 
-    public static void sort(int[] a, int[] temp, int lStart, int rEnd){
+    public static void sort(int[] a, int[] temp, int lStart, int middle, int rEnd){
 
-        int lEnd=(rEnd+lStart)/2;
-        int rStart=lEnd+1;
-        int size=rEnd-lStart+1;
-
-        int left=lStart;
-        int right=rStart;
-        int index=lStart;
-        while(left<=lEnd &&right<=rEnd){
-            if(a[left]<a[right]){
-                temp[index]=a[left];
-                left++;
-            }
-            else{
-                counter +=right-left;
-                temp[index]=a[right];
-                right++;
-            }
-            index++;
+        for(int i=lStart; i<=rEnd; i++){
+            temp[i]=a[i];
         }
 
-        System.arraycopy(a, left, temp, index, lEnd-left+1);
-        System.arraycopy(a, right, temp, index, rEnd-right+1);
-        System.arraycopy(temp, lStart, a, lStart, size);
+        int curr=lStart;
+        int left=lStart;
+        int right=middle+1;
+
+        while(left<=middle && right<=rEnd){
+            if(temp[left]<=temp[right]){
+                a[curr]=temp[left];
+                curr++;
+                left++;
+            }else{
+
+                a[curr]=temp[right];
+                curr++;
+                right++;
+                counter += middle+1 - left;
+            }
+        }
+        while(left <= middle){
+            a[curr] = temp[left];
+            curr++;
+            left++;
+        }
     }
 
     public static void main(String[] args) {
@@ -65,7 +69,6 @@ public class MergeSortHack {
             }
 
             System.out.println(mergeSort(arr));
-            System.out.println(arr);
         }
 
     }
