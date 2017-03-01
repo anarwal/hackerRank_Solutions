@@ -10,7 +10,11 @@ import java.util.Scanner;
  */
 public class RunningMedianApproachThree {
 
+    //This is the minHeap
     private static PriorityQueue<Integer> lHeap = new PriorityQueue<>();                           // keeps track of the LARGE numbers
+
+
+    //This is the maxHeap
     private static PriorityQueue<Integer> sHeap = new PriorityQueue<>(Collections.reverseOrder()); // keeps track of the SMALL numbers
 
     public static void main(String[] args) {
