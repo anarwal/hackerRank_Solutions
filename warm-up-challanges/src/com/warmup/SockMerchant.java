@@ -41,6 +41,7 @@ public class SockMerchant {
             ar[i] = Integer.valueOf(sc.next());
         }
         System.out.println("Printing arrays: " + Arrays.toString(ar));
-        sockMerchant(n,ar);
+        Integer result = sockMerchant(n,ar);
+        System.out.println("Number of pairs: " +result);
     }
 }
