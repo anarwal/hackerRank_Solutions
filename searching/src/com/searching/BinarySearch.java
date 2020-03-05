@@ -1,4 +1,4 @@
-package com.sorting;
+package com.searching;
 
 
 /**
@@ -37,7 +37,7 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] array={1,4,6,7,8,9};
         int element=4;
-        int returnVale=BinarySearch.binarySearch(array,element);
+        int returnVale=binarySearch(array,element);
         if(returnVale==-1){
             System.out.println("Element found");
         }
